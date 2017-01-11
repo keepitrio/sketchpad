@@ -1,0 +1,7 @@
+.col {
+    width: .5%;
+    height: 5px;
+    border: 1px solid black;
+    background-color: white;
+    display: inline-block;
+}
