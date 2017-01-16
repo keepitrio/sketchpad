@@ -23,7 +23,6 @@ context = canvas.getContext("2d");
 
 //Mouse events.. When mouse is clicked and moved, it will draw.
 canvas.addEventListener('mousedown', function(e) {
-  console.log("mousedown");
   var mouseX = e.pageX - this.offsetLeft;
   var mounseY = e.pageY - this.offsetTop
 
@@ -70,8 +69,11 @@ function redraw(){
 }
 
 var clear = document.getElementById('clear');
-clear.addEventListener('click', function(e){
-
+clear.addEventListener('click', function(e) {
+  context.clearRect(0, 0, 500, 300);
 });
 
-context.clearRect(0, 0, 500, 300);
+var random = document.getElementById('color');
+color.addEventListener('click', function(e) {
+});
+
