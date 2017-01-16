@@ -1,12 +1,22 @@
 <!DOCTYPE html>
+
 <html>
+
 <head>
   <title>Sketchpad</title>
   <link rel="stylesheet" type="text/css" href="main.css">
 </head>
-<body>
 
-<script src="main.js"></script>
+<body>
+  <div id="canvasDiv"></div>
+  <script src="main.js"></script>
+
+  <div class="buttonWrapper">
+    <button class="button" id="clear" onclick="clearGrid()">Clear</button>
+    <button class="button" id="color" onclick="randomColor()">Give me a random color!</button>
+
+    <!-- <button class="button" onclick="savePic()">Save pic</button> -->
+  </div>
 </body>
 </html>
 
