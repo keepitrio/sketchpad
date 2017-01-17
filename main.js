@@ -51,9 +51,13 @@ canvas.addEventListener('mouseleave', function(e){
 function redraw(){
   context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
 
-  context.strokeStyle = "#A3CEF1";
+  var colorButton = document.getElementById('color');
+  colorButton.addEventListener('click', function(e) {
+    context.strokeStyle = colors[Math.floor(Math.random() * colors.length)];
+  });
+
   context.lineJoin = "round";
-  context.lineWidth = 5;
+  context.lineWidth = 3;
 
   for(var i=0; i < clickX.length; i++) {
     context.beginPath();
@@ -68,12 +72,23 @@ function redraw(){
   }
 }
 
-var clear = document.getElementById('clear');
-clear.addEventListener('click', function(e) {
+var clearButton = document.getElementById('clear');
+clearButton.addEventListener('click', function(e) {
   context.clearRect(0, 0, 500, 300);
+  clickX = [];
+  clickY = [];
 });
 
-var random = document.getElementById('color');
-color.addEventListener('click', function(e) {
-});
+colors = [
+  white = "#E7ECEF",
+  navy = "#274C77",
+  blue = "#6096BA",
+  lightBlue = "#A3CEF1",
+  grey = "#8B8C89"
+]
 
+
+
+//Where are the drawings stored? Why doesn't clear function make a new canvas?
+//are you able to store new information in variables that are inside a function?
+//Can I change strokeStyle in redraw()?
