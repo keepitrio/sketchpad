@@ -77,6 +77,7 @@ clearButton.addEventListener('click', function(e) {
   context.clearRect(0, 0, 500, 300);
   clickX = [];
   clickY = [];
+
 });
 
 colors = [
