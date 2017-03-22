@@ -23,6 +23,7 @@ context = canvas.getContext("2d");
 
 //Mouse events.. When mouse is clicked and moved, it will draw.
 canvas.addEventListener('mousedown', function(e) {
+  redraw();
   var mouseX = e.pageX - this.offsetLeft;
   var mounseY = e.pageY - this.offsetTop
 
@@ -30,7 +31,7 @@ canvas.addEventListener('mousedown', function(e) {
   //addClick will record mouse location data
   addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop);
   //redraw will draw the data
-  redraw();
+  // redraw();
 });
 
 canvas.addEventListener('mousemove', function(e){
@@ -54,6 +55,7 @@ function redraw(){
   var colorButton = document.getElementById('color');
   colorButton.addEventListener('click', function(e) {
     context.strokeStyle = colors[Math.floor(Math.random() * colors.length)];
+    redraw();
   });
 
   context.lineJoin = "round";
@@ -74,6 +76,7 @@ function redraw(){
 
 var clearButton = document.getElementById('clear');
 clearButton.addEventListener('click', function(e) {
+  redraw();
   context.clearRect(0, 0, 500, 300);
   clickX = [];
   clickY = [];
